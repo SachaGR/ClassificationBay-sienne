@@ -1,0 +1,16 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Exercice 1 : D\IeC {\'e}cision bay\IeC {\'e}sienne}{1}
+\contentsline {section}{\numberline {3}Exercice 2 : Application \IeC {\`a} la d\IeC {\'e}tection de visages automatique}{4}
+\contentsline {subsection}{\numberline {3.1}Partie I : Apprentissage du mod\IeC {\`e}le de peau}{4}
+\contentsline {subsubsection}{\numberline {3.1.1}S\IeC {\'e}lection des \IeC {\'e}chantillons d'apprentissage}{4}
+\contentsline {subsubsection}{\numberline {3.1.2}Choix des caract\IeC {\'e}ristiques}{5}
+\contentsline {subsubsection}{\numberline {3.1.3}Calcul des param\IeC {\`e}tres du mod\IeC {\`e}le}{5}
+\contentsline {subsection}{\numberline {3.2}Partie II : Vers un classifieur bay\IeC {\'e}sien}{5}
+\contentsline {subsubsection}{\numberline {3.2.1}Classe "non-peau"}{5}
+\contentsline {subsubsection}{\numberline {3.2.2}Classifieur optimal}{5}
+\contentsline {section}{\numberline {A}Compl\IeC {\'e}ments et figures annexes de l'exercice I}{6}
+\contentsline {subsection}{\numberline {A.1}Tableau de la probabilit\IeC {\'e} de l'erreur}{6}
+\contentsline {subsection}{\numberline {A.2}Graphiques avec les nouveaux param\IeC {\`e}tres}{6}
+\contentsline {section}{\numberline {B}Code \emph {MatLab} de l'exercice I}{7}
+\contentsline {section}{\numberline {C}Code \emph {MatLab} de l'exercice II}{8}
