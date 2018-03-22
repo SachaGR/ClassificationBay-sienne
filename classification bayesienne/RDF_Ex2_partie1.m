@@ -12,7 +12,7 @@ p = 0.2 ;
 
 % Image de test
 %inputfile='George_W_Bush/George_W_Bush_0024.jpg';
-inputfile='George_W_Bush/George_W_Bush_0035.jpg';
+inputfile='George_W_Bush/George_W_Bush_0027.jpg';
 I_test=imread(inputfile);
 
 figure('Name','Image Originale');imshow(I_test);
@@ -71,7 +71,34 @@ subplot(1,2,2);
 surf(modelegaussien);
 title('Modèle de la densité de probabilité jointe gaussienne de la classe peau')
 
+hist2d = zeros(256);
+%approximation entière des valeurs de chrominance
+cr = round(all_data(:,2));
+cb = round(all_data(:,1));
+%calcul de l'histogramme 2D d
+for i = 1:length(cr)
+   hist2d(cr(i),cb(i)) = hist2d(cr(i),cb(i))+1;
+end
 
+hist2d = hist2d ./ (256 * 256);
+sum = 0;
+
+
+for k = 1 : 256
+    for l = 1 : 256
+        sum = sum + hist2d(k,l); 
+    end
+end
+
+err_quad = 0;
+
+for k = 1 : 256
+    for l = 1 : 256
+        err_quad = err_quad + (hist2d(k,l) - modelegaussien(k,l))^2; 
+    end
+end
+
+err_quad = err_quad / (256 * 256);
 
 %% Application du modèle à des images test
 

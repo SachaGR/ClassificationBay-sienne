@@ -342,7 +342,11 @@ $115,27$ & $128,89$
 \right ) 
 $$
 
-On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramme2D_vue_dessus} que le modèle gaussien ne possède qu'un seul mode. Le modèle semble toutefois proche des observations avec un maximum correspondant au maximum de l'histogramme des images d'apprentissage.
+On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramme2D_vue_dessus} que le modèle gaussien ne possède qu'un seul mode. Le modèle semble toutefois proche des observations avec un maximum correspondant au maximum de l'histogramme des images d'apprentissage. En utilisant l'histogramme expérimental normalisé et en calculant l'erreur quadratique moyenne $\text{e}_{\text{quad}}$ entre celui-ci et le modèle probabiliste de gaussienne multivariée on trouve :
+$$
+\text{e}_{\text{quad}} = 3,34.10^{-8}
+$$
+Ce qu'on considère comme bon avec assez peu d'images d'apprentissage pour construire le modèle.
 
 \subsubsection{Application du modèle à une image test}
 
@@ -350,7 +354,7 @@ Le modèle de probabilité de la classe peau est bien pertinent avec les résult
 
 \begin{figure}[H]
 \center
-\includegraphics[width=15cm]{exo2_skin1.png}
+\includegraphics[width=12cm]{exo2_skin1.png}
 \caption{Image originale et reconnaissance de la peau}
 
 \end{figure}
@@ -377,7 +381,7 @@ Nous allons considérer que $\mathbb{P}(\omega_1) = \mathbb{P}(\omega_2) = \frac
 \\
 L'expression précédente devient alors: $p(\omega_1|\textbf{x})=\frac{1}{2}\frac{p(\textbf{x}|\omega_1)}{p(\textbf{x})}$.
 \\
-Afin d'obtenir $p(\textbf{x}|\omega_2)$, on prend les bords des images de la banque d'échantillon. Pour cela on utilise la fonction \emph{SelectPixelsNonCentre} dont le code est donné ci-dessous. 
+Afin d'obtenir $p(\textbf{x}|\omega_2)$, on prend les bords des images de la banque d'échantillon. Pour cela on utilise la fonction \emph{SelectPixelsNonCentre} dont le code est donné ci-dessous. Cette fonction; contrairement qui travaillait sur l'image brute, travaille uniquement sur les composantes C$_\text{b}$ et C$_\text{r}$ d'un image, qui font partie des paramètres d'entrée de la fonction.
 
 \noindent\hrulefill
 \begin{lstlisting}[language=matlab]
