@@ -273,6 +273,7 @@ On va ne pas prendre en compte le dénominateur dans le calcul des probabilités
 On considère que le modèle de peau peut être modélisé par un modèle gaussien multi-varié. On pose $\textbf{x}$ le vecteur contenant les données de couleurs d'un pixel, si on pose $w_1$ le classe "peau" on écrit :
 \begin{equation}
 p(\textbf{x}|w_1) = \frac{1}{(2\pi)^{\frac{d}{2}}|\Sigma_1|^{\frac{1}{2}}}\,\text{exp}\left[-\frac{1}{2}(\textbf{x}-\mu_1)^T \Sigma_1^{-1}(\textbf{x}-\mu_1)\right]
+\label{eq.gauss.multi}
 \end{equation}
 
 On va chercher à trouver les paramètres $\left(\mu_1,\Sigma_1\right)$ inconnus par une phase d'apprentissage.
@@ -303,7 +304,7 @@ Cette approche a l'avantage d'être économe en temps de calcul. Cependant, elle
 \subsubsection{Choix des caractéristiques}
 Pour cette étude, il est proposé d'utiliser l'information chromatique de la peau. Cette approche a l'avantage d'être un vecteur de faible dimension. Ce plus, cette information permet de bien séparer la peau du reste de l'image car la chromaticité de la peau restera très différente de celle du fond.
 
-Nous nous placerons dans l'espace L*a*b. Sachant que l'information de luminance de nous intéresse pas, nous ne travaillerons que sur deux informations ce qui est plus facile à gérer.
+Nous nous placerons dans l'espace Y C$_\text{r}$ C$_\text{b}$. Sachant que l'information de luminance de nous intéresse pas, nous ne travaillerons que sur deux informations ce qui est plus facile à gérer.
 
 L'histogramme obtenu suite à l'exécution du code \emph{plothist2d.m} représente les valeurs de $C_r$ et $C_b$ de chaque pixels des 20 images de la base d'échantillon. On observe que les valeurs de $C_r$ et $C_b$ sont localisées en deux pics\footnote{Dont un principal vers (150,150) et un secondaire vers (80,80)}.
 
@@ -315,7 +316,15 @@ L'histogramme obtenu suite à l'exécution du code \emph{plothist2d.m} représen
 \end{figure} 
 
 
+Comme modèle de probabilité théorique que l'on va utiliser pour modéliser l'information de couleur de la peau on va prendre un modèle \emph{gaussien multi-varié}.
+
 \subsubsection{Calcul des paramètres du modèle}
+
+On rappelle l'équation \ref{eq.gauss.multi} du modèle gaussien multi-varié :
+$$
+p(\textbf{x}|w_1) = \frac{1}{(2\pi)^{\frac{d}{2}}|\Sigma_1|^{\frac{1}{2}}}\,\text{exp}\left[-\frac{1}{2}(\textbf{x}-\mu_1)^T \Sigma_1^{-1}(\textbf{x}-\mu_1)\right]
+$$
+
 \subsection{Partie II : Vers un classifieur bayésien}
 \subsubsection{Classe "non-peau"}
 

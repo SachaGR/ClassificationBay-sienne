@@ -12,4 +12,6 @@ for i = 1:length(cr)
    hist2d(cr(i),cb(i)) = hist2d(cr(i),cb(i))+1;
 end
 % %représentation 2D de l'histogramme
-surf(hist2d);
+surf(hist2d)
+imshow(hist2d,[]);
+colormap 
