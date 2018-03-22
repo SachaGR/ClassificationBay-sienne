@@ -312,9 +312,17 @@ L'histogramme obtenu suite à l'exécution du code \emph{plothist2d.m} représen
 \center
 \includegraphics[width=15cm]{exo2_hist2D.png}
 \label{fig.exo2_histogramme2D}
-\caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien}
+\caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien - vue en $3D$}
 \end{figure} 
 
+Sur la figure suivante on regarde ces histogrammes vus du dessus pour avoir une vision un peu plus claire des choses.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{exo2_hist2D_vue_dessus.png}
+\label{fig.exo2_histogramme2D_vue_dessus}
+\caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien - vue du dessus}
+\end{figure} 
 
 Comme modèle de probabilité théorique que l'on va utiliser pour modéliser l'information de couleur de la peau on va prendre un modèle \emph{gaussien multi-varié}.
 
@@ -324,6 +332,18 @@ On rappelle l'équation \ref{eq.gauss.multi} du modèle gaussien multi-varié :
 $$
 p(\textbf{x}|w_1) = \frac{1}{(2\pi)^{\frac{d}{2}}|\Sigma_1|^{\frac{1}{2}}}\,\text{exp}\left[-\frac{1}{2}(\textbf{x}-\mu_1)^T \Sigma_1^{-1}(\textbf{x}-\mu_1)\right]
 $$
+On a un modèle où le vecteur de données est un vecteur contenant deux paramètres\footnote{Un vecteur 2x1} donc la matrice de covariance doit être une matrice à deux dimensions, ce qui est bien le cas ici : 
+$$
+\Sigma_1 = \left (
+\begin{array}{cc}
+$243,17$ & $115,27$ \\ 
+$115,27$ & $128,89$
+\end{array} 
+\right ) 
+$$
+
+On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramme2D_vue_dessus} que le modèle gaussien ne possède qu'un seul mode. Le modèle semble proche des observations, mais pour avoir une mesure de l'écart entre l'histogramme expérimental et le modèle gaussien multi-varié nous allons regarder l'erreur quadratique moyenne.
+
 
 \subsection{Partie II : Vers un classifieur bayésien}
 \subsubsection{Classe "non-peau"}
