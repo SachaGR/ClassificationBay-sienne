@@ -266,13 +266,13 @@ On va ne pas prendre en compte le dénominateur dans le calcul des probabilités
 \section{Exercice 2 : Application à la détection de visages automatique}
 
 
-\subsection{Partie I : Apprentissage du modèle de peau}
+\subsection{Partie 1 : Apprentissage du modèle de peau}
 
 \subsubsection{Sélection des échantillons d'apprentissage}
 
-On considère que le modèle de peau peut être modélisé par un modèle gaussien multi-varié. On pose $\textbf{x}$ le vecteur contenant les données de couleurs d'un pixel, si on pose $w_1$ le classe "peau" on écrit :
+On considère que le modèle de peau peut être modélisé par un modèle gaussien multi-varié. On pose $\textbf{x}$ le vecteur contenant les données de couleurs d'un pixel, si on pose $\omega_1$ le classe "peau" on écrit :
 \begin{equation}
-p(\textbf{x}|w_1) = \frac{1}{(2\pi)^{\frac{d}{2}}|\Sigma_1|^{\frac{1}{2}}}\,\text{exp}\left[-\frac{1}{2}(\textbf{x}-\mu_1)^T \Sigma_1^{-1}(\textbf{x}-\mu_1)\right]
+p(\textbf{x}|\omega_1) = \frac{1}{(2\pi)^{\frac{d}{2}}|\Sigma_1|^{\frac{1}{2}}}\,\text{exp}\left[-\frac{1}{2}(\textbf{x}-\mu_1)^T \Sigma_1^{-1}(\textbf{x}-\mu_1)\right]
 \label{eq.gauss.multi}
 \end{equation}
 
@@ -330,7 +330,7 @@ Comme modèle de probabilité théorique que l'on va utiliser pour modéliser l'
 
 On rappelle l'équation \ref{eq.gauss.multi} du modèle gaussien multi-varié :
 $$
-p(\textbf{x}|w_1) = \frac{1}{(2\pi)^{\frac{d}{2}}|\Sigma_1|^{\frac{1}{2}}}\,\text{exp}\left[-\frac{1}{2}(\textbf{x}-\mu_1)^T \Sigma_1^{-1}(\textbf{x}-\mu_1)\right]
+p(\textbf{x}|\omega_1) = \frac{1}{(2\pi)^{\frac{d}{2}}|\Sigma_1|^{\frac{1}{2}}}\,\text{exp}\left[-\frac{1}{2}(\textbf{x}-\mu_1)^T \Sigma_1^{-1}(\textbf{x}-\mu_1)\right]
 $$
 On a un modèle où le vecteur de données est un vecteur contenant deux paramètres\footnote{Un vecteur 2x1} donc la matrice de covariance doit être une matrice à deux dimensions, ce qui est bien le cas ici : 
 $$
@@ -346,6 +346,16 @@ On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramm
 
 \subsubsection{Application du modèle à une image test}
 
+Le modèle de probabilité de la classe peau est bien pertinent avec les résultats que l'on a, comme sur la figure suivante\footnote{D'autres résultats peuvent être trouvés en annexe \ref{an.reconn}.} :
+
+\begin{figure}[H]
+\center
+\includegraphics[width=15cm]{exo2_skin1.png}
+\caption{Image originale et reconnaissance de la peau}
+
+\end{figure}
+
+Cette approche nous permet, de plus, de faire de la segmentation de visage sur les images. On le fait et on  trouve le résultat suivant \footnote{On peut voir d'autres résultats de segmentation en annexe \ref{an.seg}.} :
 
 
 \begin{figure}[H]
@@ -355,17 +365,17 @@ On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramm
 \label{fig.exo2_image_seg}
 \end{figure} 
 
+Ce modèle présente tout de même certaines limites que l'on illustre dans les figures en annexe \ref{an.lim} où parfois on ne détecte pas tout le visage ou alors le fond est aussi reconnus comme de la peau alors que cela n'est pas le cas.
 
-
-\subsection{Partie II : Vers un classifieur bayésien}
+\subsection{Partie 2 : Vers un classifieur bayésien}
 \subsubsection{Classe "non-peau"}
 Nous allons ici travailler au développement d'un classifieur bayésien. Pour cela, il convient de rappeler l'expression suivante:
 $$
 p(\omega_1|\textbf{x}) = \frac{p(\textbf{x}|\omega_1)\mathbb{P}(\omega_1)}{p(\textbf{x})}
 $$
-Nous allons considérer que $\mathbb{P}(\omega_1) = \mathbb{P}(\omega_2) = \frac{1}{2}$ 
+Nous allons considérer que $\mathbb{P}(\omega_1) = \mathbb{P}(\omega_2) = \frac{1}{2}$.
 \\
-L'expression précédente devient alors: $\mathbb{P}(\omega_1|\textbf{x})=\frac{1}{2}\frac{p(\textbf{x}|\omega_1)}{p(\textbf{x})}$
+L'expression précédente devient alors: $p(\omega_1|\textbf{x})=\frac{1}{2}\frac{p(\textbf{x}|\omega_1)}{p(\textbf{x})}$.
 \\
 Afin d'obtenir $p(\textbf{x}|\omega_2)$, on prend les bords des images de la banque d'échantillon. Pour cela on utilise la fonction \emph{SelectPixelsNonCentre} dont le code est donné ci-dessous. 
 
@@ -614,6 +624,56 @@ legend('Classe 1 : densite de probabilite','Classe 2 : densite de probabilite', 
 	'Classe 1 : propabilite a posteriori', ...
 	'Classe 2 : propabilite a posteriori','x_B');
 \end{lstlisting}
+
+\newpage
+\section{Figures annexes de la partie I de l'exercice II}
+\subsection{Reconnaissance de la peau}
+\label{an.reconn}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=15cm]{exo2_skin2.png}
+\caption{Image originale et reconnaissance de la peau}
+
+\end{figure}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=15cm]{exo2_skin3.png}
+\caption{Image originale et reconnaissance de la peau}
+
+\end{figure}
+
+\subsection{Images segmentées}
+\label{an.seg}
+
+\begin{figure}[H]
+\center
+\includegraphics[width=11cm]{exo2_image_seg2.png}
+\caption{Image originale et image segmentée du visage}
+\end{figure} 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=11cm]{exo2_image_seg3.png}
+\caption{Image originale et image segmentée du visage}
+\end{figure} 
+
+\subsection{Limites du modèle}
+\label{an.lim}
+On voit de la mauvaise segmentation pour les deux figures suivantes en utilisant notre modèle :
+
+\begin{figure}[H]
+\center
+\includegraphics[width=11cm]{exo2_image_seg_limit1.png}
+\caption{Mauvaise segmentation de la peau}
+\end{figure} 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=11cm]{exo2_image_seg_limit2.png}
+\caption{Mauvaise segmentation de la peau}
+\end{figure} 
 
 \newpage
 \section{Code \emph{MatLab} de l'exercice II}

@@ -12,12 +12,11 @@ p = 0.2 ;
 
 % Image de test
 %inputfile='George_W_Bush/George_W_Bush_0024.jpg';
-inputfile='George_W_Bush/George_W_Bush_0027.jpg';
+inputfile='George_W_Bush/George_W_Bush_0035.jpg';
 I_test=imread(inputfile);
 
 figure('Name','Image Originale');imshow(I_test);
 imycbcr = rgb2ycbcr(I_test);
-
 all_data=[];
 for f = 1:20  %num_files to learn from all images
    im=strcat(database_dir,'/',fnames(f).name) ;  
