@@ -7,7 +7,7 @@ hist2d = zeros(256);
 %approximation entière des valeurs de chrominance
 cr = round(cr);
 cb = round(cb);
-%calcul de l'histogramme 2D 
+%calcul de l'histogramme 2D d
 for i = 1:length(cr)
    hist2d(cr(i),cb(i)) = hist2d(cr(i),cb(i))+1;
 end
