@@ -15,7 +15,7 @@ p = 0.2 ;
 inputfile='George_W_Bush/George_W_Bush_0027.jpg';
 I_test=imread(inputfile);
 
-figure;imshow(I_test);
+figure('Name','Image Originale');imshow(I_test);
 imycbcr = rgb2ycbcr(I_test);
 
 all_data=[];
@@ -43,7 +43,7 @@ for f = 1:20  %num_files to learn from all images
 end 
 
 %% Représentation des échantillons dans l'espace des paramètres
-figure;
+figure('Name','Histogramme');
 plot_hist2d(all_data(:,1), all_data(:,2));
 % interprétation de l'histogramme
 
@@ -98,7 +98,7 @@ pxskin = filter2(lpf,pxskin);
 pxskin = pxskin./max(max(pxskin));
 
 %affichage de l'image résultat
-figure;
+figure('Name','Image Résultat');
 subplot(1,2,1);
 imshow(I_test, [0 1]);
 title('Image RGB initiale')

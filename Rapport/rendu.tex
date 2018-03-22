@@ -297,8 +297,22 @@ cim = I(minx:maxx,miny:maxy,:);
 \end{lstlisting}
 \noindent\hrulefill
 \\
-Cette fonction est celle utilisée pour prendre seulement une zone centrale de l'image.
+Cette fonction est celle utilisée pour prendre seulement une zone centrale de l'image. L'attribut p détermine la taille de cette zone.
+Cette approche a l'avantage d'être économe en temps de calcul. Cependant, elle ne fonctionne que si la zone d'intérêt (ici, le visage de l'ex-président) se situe dans au centre de l'image. Dans le cas contraire, il faudra faire appel à une technique différente.
+
 \subsubsection{Choix des caractéristiques}
+Pour cette étude, il est proposé d'utiliser l'information chromatique de la peau. Cette approche a l'avantage d'être un vecteur de faible dimension. Ce plus, cette information permet de bien séparer la peau du reste de l'image car la chromaticité de la peau restera très différente de celle du fond.
+
+Nous nous placerons dans l'espace L*a*b. Sachant que l'information de luminance de nous intéresse pas, nous ne travaillerons que sur deux informations ce qui est plus facile à gérer.
+
+L'histogramme obtenu suite à l'exécution du code \emph{plothist2d.m} représente les valeurs de $C_r$ et $C_b$ de chaque pixels des 20 images de la base d'échantillon. On observe que les valeurs de $C_r$ et $C_b$ sont localisées en deux pics\footnote{Dont un principal vers (150,150) et un secondaire vers (80,80)}.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=15cm]{exo2_hist2D.png}
+\label{fig.exo2_histogramme2D}
+\caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien}
+\end{figure} 
 
 
 \subsubsection{Calcul des paramètres du modèle}
@@ -514,4 +528,8 @@ legend('Classe 1 : densite de probabilite','Classe 2 : densite de probabilite', 
 
 \newpage
 \section{Code \emph{MatLab} de l'exercice II}
+
+
+
+
 \end{document}
