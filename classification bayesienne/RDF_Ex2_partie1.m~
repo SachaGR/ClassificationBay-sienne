@@ -72,6 +72,7 @@ surf(modelegaussien);
 title('Modèle de la densité de probabilité jointe gaussienne de la classe peau')
 
 
+
 %% Application du modèle à des images test
 
 [m,n,l] = size(I_test);

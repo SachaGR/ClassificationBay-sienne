@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.10)  22 MAR 2018 19:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.10)  22 MAR 2018 19:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -588,78 +588,77 @@ Package pdftex.def Info: exo2_hist2D_vue_dessus.png used on input line 322.
 <exo2_skin1.png, id=49, 1223.57124pt x 707.64375pt>
 File: exo2_skin1.png Graphic file (type png)
  <use exo2_skin1.png>
-Package pdftex.def Info: exo2_skin1.png used on input line 357.
-(pdftex.def)             Requested size: 341.43306pt x 197.45863pt.
+Package pdftex.def Info: exo2_skin1.png used on input line 353.
+(pdftex.def)             Requested size: 426.79134pt x 246.826pt.
 
-[9 <./exo2_skin1.png (PNG copy)>]
-<exo2_image_seg.png, id=53, 1223.57124pt x 707.64375pt>
+<exo2_image_seg.png, id=50, 1223.57124pt x 707.64375pt>
 File: exo2_image_seg.png Graphic file (type png)
 
 <use exo2_image_seg.png>
-Package pdftex.def Info: exo2_image_seg.png used on input line 367.
+Package pdftex.def Info: exo2_image_seg.png used on input line 363.
 (pdftex.def)             Requested size: 426.79134pt x 246.826pt.
- [10 <./exo2_image_seg.png (PNG copy)>] [11]
+ [9 <./exo2_skin1.png (PNG copy)>] [10 <./exo2_image_seg.png (PNG copy)>] [11]
 <exo1_graph_mu05.png, id=60, 980.66376pt x 609.27625pt>
 File: exo1_graph_mu05.png Graphic file (type png)
 
 <use exo1_graph_mu05.png>
-Package pdftex.def Info: exo1_graph_mu05.png used on input line 463.
+Package pdftex.def Info: exo1_graph_mu05.png used on input line 459.
 (pdftex.def)             Requested size: 398.33858pt x 247.48067pt.
  <exo1_graph_mu2.png, id=61, 979.66pt x 610.28pt>
 File: exo1_graph_mu2.png Graphic file (type png)
 
 <use exo1_graph_mu2.png>
-Package pdftex.def Info: exo1_graph_mu2.png used on input line 469.
+Package pdftex.def Info: exo1_graph_mu2.png used on input line 465.
 (pdftex.def)             Requested size: 398.33858pt x 248.13982pt.
  [12 <./exo1_graph_mu05.png>]
 <exo1_graph_mu1_sigma025.png, id=65, 977.6525pt x 607.26875pt>
 File: exo1_graph_mu1_sigma025.png Graphic file (type png)
 
 <use exo1_graph_mu1_sigma025.png>
-Package pdftex.def Info: exo1_graph_mu1_sigma025.png used on input line 475.
+Package pdftex.def Info: exo1_graph_mu1_sigma025.png used on input line 471.
 (pdftex.def)             Requested size: 398.33858pt x 247.42508pt.
 
 <exo1_graph_mu1_sigma1.png, id=66, 979.66pt x 607.26875pt>
 File: exo1_graph_mu1_sigma1.png Graphic file (type png)
 
 <use exo1_graph_mu1_sigma1.png>
-Package pdftex.def Info: exo1_graph_mu1_sigma1.png used on input line 481.
+Package pdftex.def Info: exo1_graph_mu1_sigma1.png used on input line 477.
 (pdftex.def)             Requested size: 398.33858pt x 246.91545pt.
  [13 <./exo1_graph_mu2.png> <./exo1_graph_mu1_sigma025.png>] <exo1_graph_mu1_si
 gma2.png, id=71, 980.66376pt x 610.28pt>
 File: exo1_graph_mu1_sigma2.png Graphic file (type png)
 
 <use exo1_graph_mu1_sigma2.png>
-Package pdftex.def Info: exo1_graph_mu1_sigma2.png used on input line 487.
+Package pdftex.def Info: exo1_graph_mu1_sigma2.png used on input line 483.
 (pdftex.def)             Requested size: 398.33858pt x 247.88838pt.
  [14 <./exo1_graph_mu1_sigma1.png> <./exo1_graph_mu1_sigma2.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 492.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 488.
  [15]
-Overfull \hbox (21.41322pt too wide) in paragraph at lines 560--561
+Overfull \hbox (21.41322pt too wide) in paragraph at lines 556--557
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [16]
-Overfull \hbox (21.41322pt too wide) in paragraph at lines 609--610
+Overfull \hbox (21.41322pt too wide) in paragraph at lines 605--606
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (21.41322pt too wide) in paragraph at lines 627--628
+Overfull \hbox (21.41322pt too wide) in paragraph at lines 623--624
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [17] <exo2_skin2.png, id=85, 1223.57124pt x 707.64375pt>
 File: exo2_skin2.png Graphic file (type png)
  <use exo2_skin2.png>
-Package pdftex.def Info: exo2_skin2.png used on input line 639.
+Package pdftex.def Info: exo2_skin2.png used on input line 635.
 (pdftex.def)             Requested size: 426.79134pt x 246.826pt.
 
 <exo2_skin3.png, id=86, 1223.57124pt x 707.64375pt>
 File: exo2_skin3.png Graphic file (type png)
  <use exo2_skin3.png>
-Package pdftex.def Info: exo2_skin3.png used on input line 646.
+Package pdftex.def Info: exo2_skin3.png used on input line 642.
 (pdftex.def)             Requested size: 426.79134pt x 246.826pt.
 
 [18 <./exo2_skin2.png (PNG copy)>]
@@ -667,62 +666,58 @@ Package pdftex.def Info: exo2_skin3.png used on input line 646.
 File: exo2_image_seg2.png Graphic file (type png)
 
 <use exo2_image_seg2.png>
-Package pdftex.def Info: exo2_image_seg2.png used on input line 656.
+Package pdftex.def Info: exo2_image_seg2.png used on input line 652.
 (pdftex.def)             Requested size: 312.9803pt x 181.00285pt.
 
 <exo2_image_seg3.png, id=91, 1223.57124pt x 707.64375pt>
 File: exo2_image_seg3.png Graphic file (type png)
 
 <use exo2_image_seg3.png>
-Package pdftex.def Info: exo2_image_seg3.png used on input line 662.
+Package pdftex.def Info: exo2_image_seg3.png used on input line 658.
 (pdftex.def)             Requested size: 312.9803pt x 181.00285pt.
  [19 <./exo2_skin3.png (PNG copy)> <./exo2_image_seg2.png (PNG copy)>]
 <exo2_image_seg_limit1.png, id=96, 1223.57124pt x 707.64375pt>
 File: exo2_image_seg_limit1.png Graphic file (type png)
 
 <use exo2_image_seg_limit1.png>
-Package pdftex.def Info: exo2_image_seg_limit1.png used on input line 672.
+Package pdftex.def Info: exo2_image_seg_limit1.png used on input line 668.
 (pdftex.def)             Requested size: 312.9803pt x 181.00285pt.
 
 <exo2_image_seg_limit2.png, id=97, 1223.57124pt x 707.64375pt>
 File: exo2_image_seg_limit2.png Graphic file (type png)
 
 <use exo2_image_seg_limit2.png>
-Package pdftex.def Info: exo2_image_seg_limit2.png used on input line 678.
+Package pdftex.def Info: exo2_image_seg_limit2.png used on input line 674.
 (pdftex.def)             Requested size: 312.9803pt x 181.00285pt.
  [20 <./exo2_image_seg3.png (PNG copy)> <./exo2_image_seg_limit1.png (PNG copy)
->] [21 <./exo2_image_seg_limit2.png (PNG copy)>] [22] (./rendu.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+>] [21 <./exo2_image_seg_limit2.png (PNG copy)>] [22] (./rendu.aux) ) 
 Here is how much of TeX's memory you used:
  7427 strings out of 493089
  95114 string characters out of 6134842
- 228433 words of memory out of 5000000
+ 229433 words of memory out of 5000000
  10774 multiletter control sequences out of 15000+600000
  56152 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,13n,40p,537b,2409s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/201
-5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/
-times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr
-i8a.pfb>
-Output written on rendu.pdf (22 pages, 1305403 bytes).
+ 38i,13n,40p,432b,2409s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/loca
+l/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/tim
+es/utmbi8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a
+.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on rendu.pdf (22 pages, 1304806 bytes).
 PDF statistics:
  163 PDF objects out of 1000 (max. 8388607)
  102 compressed objects within 2 object streams
