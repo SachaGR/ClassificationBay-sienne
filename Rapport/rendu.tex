@@ -359,7 +359,16 @@ On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramm
 
 \subsection{Partie II : Vers un classifieur bayésien}
 \subsubsection{Classe "non-peau"}
-
+Nous allons ici travailler au développement d'un classifieur bayésien. Pour cela, il convient de rappeler l'expression suivante:
+$$
+P(\omega_1|x) = \frac{p(x|\omega_1)*P(\omega_1)}{p(x)}
+$$
+Nous allons considérer que $P(\omega_1) = P(\omega_2) = \frac{1}{2}$ 
+\\
+L'expression précédente devient alors: $P(\omega_1|x)=\frac{1}{2}*\frac{p(x|\omega_1)}{p(x)}$
+\\
+Afin d'obtenir $P(x|\omega_2)$, on prend les bords des images de la banque d'échantillon. Pour cela, la fonction \emph{SelectPixelsNonCentre}. 
+\\
 
 \subsubsection{Classifieur optimal}
 
