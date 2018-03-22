@@ -123,3 +123,5 @@ title('Image RGB initiale')
 subplot(1,2,2);
 imshow(image_seg, [0 1]);
 title('Image segmentée')
+
+%% Partie 2

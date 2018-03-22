@@ -306,7 +306,7 @@ Pour cette étude, il est proposé d'utiliser l'information chromatique de la pe
 
 Nous nous placerons dans l'espace Y C$_\text{r}$ C$_\text{b}$. Sachant que l'information de luminance de nous intéresse pas, nous ne travaillerons que sur deux informations ce qui est plus facile à gérer.
 
-L'histogramme obtenu suite à l'exécution du code \emph{plothist2d.m} représente les valeurs de $C_r$ et $C_b$ de chaque pixels des 20 images de la base d'échantillon. On observe que les valeurs de $C_r$ et $C_b$ sont localisées en deux pics\footnote{Dont un principal vers (150,150) et un secondaire vers (80,80)}.
+L'histogramme obtenu suite à l'exécution du code \emph{plot\_hist2d.m} représente les valeurs de $C_r$ et $C_b$ de chaque pixels des 20 images de la base d'échantillon. On observe que les valeurs de $C_r$ et $C_b$ sont localisées en deux pics\footnote{Dont un principal vers (150,150) et un secondaire vers (80,80)}.
 
 \begin{figure}[H]
 \center
@@ -678,6 +678,109 @@ On voit de la mauvaise segmentation pour les deux figures suivantes en utilisant
 \newpage
 \section{Code \emph{MatLab} de l'exercice II}
 
+\subsection{Code de la fonction \emph{get\_cbcr}}
+
+\begin{lstlisting}[language=matlab]
+function [cb, cr] = get_cbcr(im)
+% appel de la fonction de conversion de Matlab  RGB to YCbCr
+imycc = rgb2ycbcr(im);
+% filtrage passe bas de chaque plan couleur 
+% definition du filtre
+lpf = 1/9 * ones(3);
+% extraction des 2 composantes chromatiques 
+cb = imycc(:,:,2);
+cr = imycc(:,:,3);
+% filtrage 
+cb = filter2(lpf, cb);
+cr = filter2(lpf, cr);
+\end{lstlisting}
+
+\subsection{Code de la fonction \emph{plot\_hist2d}}
+
+\begin{lstlisting}[language=matlab]
+function plot_hist2d(cr, cb)
+%creation d'une matrice 256 x 256 de zeros pour initialisation d'une
+%matrice quantifiee 
+hist2d = zeros(256);
+%approximation entiere des valeurs de chrominance
+cr = round(cr);
+cb = round(cb);
+%calcul de l'histogramme 2D
+for i = 1:length(cr)
+   hist2d(cr(i),cb(i)) = hist2d(cr(i),cb(i))+1;
+end
+%representation 2D de l'histogramme
+surf(hist2d);
+\end{lstlisting}
+
+\subsection{Code de la fonction \emph{GaussLikelihood}}
+
+\begin{lstlisting}[language=matlab]
+function pxlikelihood=GaussLikelihood(xs,mu,sig_inv,d_sig)
+
+d = length(mu);
+coef_norm = (1/((2*pi)^(d/2)*d_sig^0.5));
+pxlikelihood = coef_norm*exp(-(xs-mu)'*sig_inv*(xs-mu)/2);
+\end{lstlisting}
+
+\subsection{Code de la fonction \emph{SelectPixelsCentre}}
+
+\begin{lstlisting}[language=matlab]
+function cim=SelectPixelsCentre(image, p)
+
+I=imread(image);
+[M N O]=size(I);
+
+minx = floor((M-p*M)/2);
+miny = floor((N-p*N)/2);
+maxx= minx+ floor(p*M);
+maxy= miny+ floor(p*N);
+
+cim = I(minx:maxx,miny:maxy,:);
+\end{lstlisting}
+
+\subsection{Code de la fonction \emph{SelectPixelsNonCentre}}
+
+\begin{lstlisting}[language=matlab]
+function cim=SelectPixelsNonCentre(cb,cr,p)
+
+[M N]=size(cb);
+
+minx = floor((M-p*M)/2);
+miny = floor((N-p*N)/2);
+maxx= minx+ floor(p*M);
+maxy= miny+ floor(p*N);
+
+n_sup = (maxy-miny+1)*(maxx-minx+1);
+cim = zeros(M*N-n_sup,2);
+
+index = 1;
+for x = 1:M
+    for y = 1:N
+        if(x < minx)
+            cim(index,1) = cb(x,y);
+            cim(index,2) = cr(x,y);
+            index = index + 1;
+        elseif(x > maxx)
+            cim(index,1) = cb(x,y);
+            cim(index,2) = cr(x,y);
+            index = index + 1;
+        else
+            if(y < miny | y > maxy)
+                cim(index,1) = cb(x,y);
+                cim(index,2) = cr(x,y);
+                index = index + 1;
+            end
+        end
+    end
+end
+\end{lstlisting}
+
+\subsection{Code principal}
+
+\begin{lstlisting}[language=matlab]
+Toi
+\end{lstlisting}
 
 
 
