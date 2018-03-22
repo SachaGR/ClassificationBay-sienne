@@ -361,14 +361,53 @@ On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramm
 \subsubsection{Classe "non-peau"}
 Nous allons ici travailler au développement d'un classifieur bayésien. Pour cela, il convient de rappeler l'expression suivante:
 $$
-P(\omega_1|x) = \frac{p(x|\omega_1)*P(\omega_1)}{p(x)}
+p(\omega_1|\textbf{x}) = \frac{p(\textbf{x}|\omega_1)\mathbb{P}(\omega_1)}{p(\textbf{x})}
 $$
-Nous allons considérer que $P(\omega_1) = P(\omega_2) = \frac{1}{2}$ 
+Nous allons considérer que $\mathbb{P}(\omega_1) = \mathbb{P}(\omega_2) = \frac{1}{2}$ 
 \\
-L'expression précédente devient alors: $P(\omega_1|x)=\frac{1}{2}*\frac{p(x|\omega_1)}{p(x)}$
+L'expression précédente devient alors: $\mathbb{P}(\omega_1|\textbf{x})=\frac{1}{2}\frac{p(\textbf{x}|\omega_1)}{p(\textbf{x})}$
 \\
-Afin d'obtenir $P(x|\omega_2)$, on prend les bords des images de la banque d'échantillon. Pour cela, la fonction \emph{SelectPixelsNonCentre}. 
-\\
+Afin d'obtenir $p(\textbf{x}|\omega_2)$, on prend les bords des images de la banque d'échantillon. Pour cela on utilise la fonction \emph{SelectPixelsNonCentre} dont le code est donné ci-dessous. 
+
+\noindent\hrulefill
+\begin{lstlisting}[language=matlab]
+function cim=SelectPixelsNonCentre(cb,cr,p)
+
+[M N]=size(cb);
+
+minx = floor((M-p*M)/2);
+miny = floor((N-p*N)/2);
+maxx= minx+ floor(p*M);
+maxy= miny+ floor(p*N);
+
+n_sup = (maxy-miny+1)*(maxx-minx+1);
+cim = zeros(M*N-n_sup,2);
+
+index = 1;
+for x = 1:M
+    for y = 1:N
+        if(x < minx)
+            cim(index,1) = cb(x,y);
+            cim(index,2) = cr(x,y);
+            index = index + 1;
+        elseif(x > maxx)
+            cim(index,1) = cb(x,y);
+            cim(index,2) = cr(x,y);
+            index = index + 1;
+        else
+            if(y < miny | y > maxy)
+                cim(index,1) = cb(x,y);
+                cim(index,2) = cr(x,y);
+                index = index + 1;
+            end
+        end
+    end
+end
+\end{lstlisting}
+\noindent\hrulefill
+
+On va pouvoir faire un apprentissage sur de la classe "non-peau" comme nous l'avons fait sur la classe "peau" précédemment.
+
 
 \subsubsection{Classifieur optimal}
 
