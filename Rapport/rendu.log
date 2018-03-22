@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.10)  22 MAR 2018 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.10)  22 MAR 2018 15:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -578,64 +578,71 @@ File: exo2_hist2D.png Graphic file (type png)
 Package pdftex.def Info: exo2_hist2D.png used on input line 313.
 (pdftex.def)             Requested size: 426.79134pt x 203.40222pt.
 
-[7] [8 <./exo2_hist2D.png (PNG copy)>]
-<exo1_graph_mu05.png, id=48, 980.66376pt x 609.27625pt>
+[7] <exo2_hist2D_vue_dessus.png, id=45, 1223.57124pt x 707.64375pt>
+File: exo2_hist2D_vue_dessus.png Graphic file (type png)
+
+<use exo2_hist2D_vue_dessus.png>
+Package pdftex.def Info: exo2_hist2D_vue_dessus.png used on input line 322.
+(pdftex.def)             Requested size: 341.43306pt x 197.45863pt.
+ [8 <./exo2_hist2D.png (PNG copy)> <./exo2_hist2D_vue_dessus.png (PNG copy)>] [
+9]
+<exo1_graph_mu05.png, id=52, 980.66376pt x 609.27625pt>
 File: exo1_graph_mu05.png Graphic file (type png)
 
 <use exo1_graph_mu05.png>
-Package pdftex.def Info: exo1_graph_mu05.png used on input line 369.
+Package pdftex.def Info: exo1_graph_mu05.png used on input line 386.
 (pdftex.def)             Requested size: 398.33858pt x 247.48067pt.
- <exo1_graph_mu2.png, id=49, 979.66pt x 610.28pt>
+ <exo1_graph_mu2.png, id=53, 979.66pt x 610.28pt>
 File: exo1_graph_mu2.png Graphic file (type png)
 
 <use exo1_graph_mu2.png>
-Package pdftex.def Info: exo1_graph_mu2.png used on input line 375.
+Package pdftex.def Info: exo1_graph_mu2.png used on input line 392.
 (pdftex.def)             Requested size: 398.33858pt x 248.13982pt.
- [9 <./exo1_graph_mu05.png>]
-<exo1_graph_mu1_sigma025.png, id=53, 977.6525pt x 607.26875pt>
+ [10 <./exo1_graph_mu05.png>]
+<exo1_graph_mu1_sigma025.png, id=57, 977.6525pt x 607.26875pt>
 File: exo1_graph_mu1_sigma025.png Graphic file (type png)
 
 <use exo1_graph_mu1_sigma025.png>
-Package pdftex.def Info: exo1_graph_mu1_sigma025.png used on input line 381.
+Package pdftex.def Info: exo1_graph_mu1_sigma025.png used on input line 398.
 (pdftex.def)             Requested size: 398.33858pt x 247.42508pt.
 
-<exo1_graph_mu1_sigma1.png, id=54, 979.66pt x 607.26875pt>
+<exo1_graph_mu1_sigma1.png, id=58, 979.66pt x 607.26875pt>
 File: exo1_graph_mu1_sigma1.png Graphic file (type png)
 
 <use exo1_graph_mu1_sigma1.png>
-Package pdftex.def Info: exo1_graph_mu1_sigma1.png used on input line 387.
+Package pdftex.def Info: exo1_graph_mu1_sigma1.png used on input line 404.
 (pdftex.def)             Requested size: 398.33858pt x 246.91545pt.
- [10 <./exo1_graph_mu2.png> <./exo1_graph_mu1_sigma025.png>] <exo1_graph_mu1_si
-gma2.png, id=58, 980.66376pt x 610.28pt>
+ [11 <./exo1_graph_mu2.png> <./exo1_graph_mu1_sigma025.png>] <exo1_graph_mu1_si
+gma2.png, id=62, 980.66376pt x 610.28pt>
 File: exo1_graph_mu1_sigma2.png Graphic file (type png)
 
 <use exo1_graph_mu1_sigma2.png>
-Package pdftex.def Info: exo1_graph_mu1_sigma2.png used on input line 393.
+Package pdftex.def Info: exo1_graph_mu1_sigma2.png used on input line 410.
 (pdftex.def)             Requested size: 398.33858pt x 247.88838pt.
- [11 <./exo1_graph_mu1_sigma1.png> <./exo1_graph_mu1_sigma2.png>]
+ [12 <./exo1_graph_mu1_sigma1.png> <./exo1_graph_mu1_sigma2.png>]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 398.
- [12]
-Overfull \hbox (21.41322pt too wide) in paragraph at lines 466--467
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 415.
+ [13]
+Overfull \hbox (21.41322pt too wide) in paragraph at lines 483--484
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[13]
-Overfull \hbox (21.41322pt too wide) in paragraph at lines 515--516
+[14]
+Overfull \hbox (21.41322pt too wide) in paragraph at lines 532--533
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (21.41322pt too wide) in paragraph at lines 533--534
+Overfull \hbox (21.41322pt too wide) in paragraph at lines 550--551
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[14] [15] (./rendu.aux) ) 
+[15] [16] (./rendu.aux) ) 
 Here is how much of TeX's memory you used:
- 7362 strings out of 493089
- 93830 string characters out of 6134842
+ 7367 strings out of 493089
+ 93979 string characters out of 6134842
  228868 words of memory out of 5000000
- 10719 multiletter control sequences out of 15000+600000
+ 10723 multiletter control sequences out of 15000+600000
  55045 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,13n,40p,416b,2409s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -657,10 +664,10 @@ l/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on rendu.pdf (15 pages, 405690 bytes).
+Output written on rendu.pdf (16 pages, 435835 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 135 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
