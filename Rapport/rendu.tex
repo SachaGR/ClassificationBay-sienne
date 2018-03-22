@@ -311,8 +311,8 @@ L'histogramme obtenu suite à l'exécution du code \emph{plothist2d.m} représen
 \begin{figure}[H]
 \center
 \includegraphics[width=15cm]{exo2_hist2D.png}
-\label{fig.exo2_histogramme2D}
 \caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien - vue en $3D$}
+\label{fig.exo2_histogramme2D}
 \end{figure} 
 
 Sur la figure suivante on regarde ces histogrammes vus du dessus pour avoir une vision un peu plus claire des choses.
@@ -320,8 +320,8 @@ Sur la figure suivante on regarde ces histogrammes vus du dessus pour avoir une 
 \begin{figure}[H]
 \center
 \includegraphics[width=12cm]{exo2_hist2D_vue_dessus.png}
-\label{fig.exo2_histogramme2D_vue_dessus}
 \caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien - vue du dessus}
+\label{fig.exo2_histogramme2D_vue_dessus}
 \end{figure} 
 
 Comme modèle de probabilité théorique que l'on va utiliser pour modéliser l'information de couleur de la peau on va prendre un modèle \emph{gaussien multi-varié}.
@@ -342,7 +342,19 @@ $115,27$ & $128,89$
 \right ) 
 $$
 
-On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramme2D_vue_dessus} que le modèle gaussien ne possède qu'un seul mode. Le modèle semble proche des observations, mais pour avoir une mesure de l'écart entre l'histogramme expérimental et le modèle gaussien multi-varié nous allons regarder l'erreur quadratique moyenne.
+On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramme2D_vue_dessus} que le modèle gaussien ne possède qu'un seul mode. Le modèle semble toutefois proche des observations avec un maximum correspondant au maximum de l'histogramme des images d'apprentissage.
+
+\subsubsection{Application du modèle à une image test}
+
+
+
+\begin{figure}[H]
+\center
+\includegraphics[width=15cm]{exo2_image_seg.png}
+\caption{Image originale et image segmentée du visage}
+\label{fig.exo2_image_seg}
+\end{figure} 
+
 
 
 \subsection{Partie II : Vers un classifieur bayésien}

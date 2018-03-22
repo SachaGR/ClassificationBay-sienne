@@ -105,4 +105,23 @@ subplot(1,2,2);
 imshow(pxskin, [0 1]);
 title('Image p(x/skin)')
 
+for k = 1 : size(pxskin,1)
+    for l = 1 : size(pxskin,2)
+        
+        if pxskin(k,l) > 0.1
+            image_seg(k,l,:) = I_test(k,l,:);                
+        else
+            image_seg(k,l,:) = [0;0;0];
+        end
+    end  
+end
 
+image_seg = uint8(image_seg);
+
+figure('Name','Image segmentée');
+subplot(1,2,1);
+imshow(I_test, [0 1]);
+title('Image RGB initiale')
+subplot(1,2,2);
+imshow(image_seg, [0 1]);
+title('Image segmentée')
