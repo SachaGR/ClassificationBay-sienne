@@ -11,7 +11,6 @@ num_files = size(fnames,1);
 p = 0.2 ; 
 
 % Image de test
-%inputfile='George_W_Bush/George_W_Bush_0024.jpg';
 inputfile='George_W_Bush/George_W_Bush_0027.jpg';
 I_test=imread(inputfile);
 
@@ -69,6 +68,7 @@ title('Histogramme 2D des échantillons')
 %représentation du modèle obtenu à partir de l'histogramme 2D
 subplot(1,2,2);
 surf(modelegaussien);
+shading interp;
 title('Modèle de la densité de probabilité jointe gaussienne de la classe peau')
 
 
@@ -103,6 +103,8 @@ subplot(1,2,2);
 imshow(pxskin, [0 1]);
 title('Image p(x/skin)')
 
+
+% segmentation de l'image
 for k = 1 : size(pxskin,1)
     for l = 1 : size(pxskin,2)
         
@@ -122,6 +124,118 @@ imshow(I_test, [0 1]);
 title('Image RGB initiale')
 subplot(1,2,2);
 imshow(image_seg, [0 1]);
-title('Image segmentée')
+title('Image segmentée');
 
 %% Partie 2
+
+% Image de test
+inputfile='George_W_Bush/George_W_Bush_0027.jpg';
+I_test_np=imread(inputfile);
+
+figure('Name','Image Originale');imshow(I_test_np);
+imycbcr = rgb2ycbcr(I_test_np);
+all_data_np=[];
+
+for f = 1:20  %num_files to learn from all images
+   im=strcat(database_dir,'/',fnames(f).name) ;  
+   % extraction d'une zone centrale de l'image
+   im = imread(im);
+   [cb, cr] = get_cbcr(im);
+   cim=SelectPixelsNonCentre(cb, cr, p);
+   % sortie : cim : composé de 2 matrices correspondant aux 2 plans chromatiques 
+   % cb=cim(:,:,1), cr=cim(:,:,2)
+   
+   
+   % extraction des composantes chromatiques cb, cr de la zone précédemment extraite
+   cb_data=reshape(cb,[size(cb,1)*size(cb,2),1]);
+   cr_data=reshape(cr,[size(cr,1)*size(cr,2),1]);
+   crcb_data_np=[cr_data cb_data];
+   clear cb; clear cr; clear cb_data; clear cr_data;
+   % on obtient un vecteur de taille size(cim,1)*size(cim,2) lignes * 2
+   % colonnes (col1 = cr; col2 = cb) 
+   % chaque ligne de la matrice correspond à un pixel (un échantillon/individu de type
+   % peau) caractérisé par 2 valeurs cr, cb filtrées.   
+   all_data_np=[all_data_np;crcb_data_np];    
+   
+end
+
+
+%% Modélisation des données par une gaussienne
+%estimation des paramètres statistiques du modèle à partir des échantillons
+mu1_np = mean(all_data_np)';
+C1_np = cov(all_data_np);
+C1_inv_np = C1_np^(-1);
+dC1_np = det(C1_np);
+%calcul du modèle dans un plan 2D
+modelegaussien_np = zeros(256);
+for r = 0:255
+   for b = 0:255
+	 x = [r; b];
+      % calcul de la vraisemblance de chaque pixel
+      modelegaussien_np(r+1,b+1) = GaussLikelihood(x,mu1_np,C1_inv_np,dC1_np);%likelihood=vraisemblance
+   end
+end
+
+%représentation de l'histogramme 2D 
+subplot(1,2,1);
+plot_hist2d(all_data_np(:,1), all_data_np(:,2))
+title('Histogramme 2D des échantillons')
+%représentation du modèle obtenu à partir de l'histogramme 2D
+subplot(1,2,2);
+surf(modelegaussien_np);
+shading interp;
+title('Modèle de la densité de probabilité jointe gaussienne de la classe peau');
+
+%% Application du modèle à des images test
+
+[m,n,l] = size(I_test_np);
+%initialisation d'une matrice 2D de la taille de l'image à traiter
+pxnoskin = zeros(m,n);
+for i = 1:m
+   for j = 1:n
+      %extraction des caractéristiques d'un échantillon (=pixel)
+       cr = double(imycbcr(i,j,3));
+       cb = double(imycbcr(i,j,2));
+       x=[cr; cb];
+       % calcul de la vraisemblance de chaque pixel
+       pxnoskin(i,j)=GaussLikelihood(x,mu1_np,C1_inv_np,dC1_np);
+   end
+end
+
+%filtrage moyen pour lisser les valeurs 
+lpf= 1/9*ones(3);
+pxnoskin = filter2(lpf,pxnoskin);
+%normalisation des valeurs de vraisemblance par la valeur max
+pxnoskin = pxnoskin./max(max(pxnoskin));
+
+%affichage de l'image résultat
+figure('Name','Image Résultat');
+subplot(1,2,1);
+imshow(I_test_np, [0 1]);
+title('Image RGB initiale')
+subplot(1,2,2);
+imshow(pxnoskin, [0 1]);
+title('Image p(x/skin)')
+
+
+% segmentation de l'image
+for k = 1 : size(pxnoskin,1)
+    for l = 1 : size(pxnoskin,2)
+        
+        if pxnoskin(k,l) > 0.1
+            image_seg_np(k,l,:) = I_test_np(k,l,:);                
+        else
+            image_seg_np(k,l,:) = [0;0;0];
+        end
+    end  
+end
+
+image_seg_np = uint8(image_seg_np);
+
+figure('Name','Image segmentée');
+subplot(1,2,1);
+imshow(I_test_np, [0 1]);
+title('Image RGB initiale')
+subplot(1,2,2);
+imshow(image_seg_np, [0 1]);
+title('Image segmentée');
