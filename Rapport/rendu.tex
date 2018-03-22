@@ -311,8 +311,8 @@ L'histogramme obtenu suite à l'exécution du code \emph{plothist2d.m} représen
 \begin{figure}[H]
 \center
 \includegraphics[width=15cm]{exo2_hist2D.png}
-\label{fig.exo2_histogramme2D}
 \caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien - vue en $3D$}
+\label{fig.exo2_histogramme2D}
 \end{figure} 
 
 Sur la figure suivante on regarde ces histogrammes vus du dessus pour avoir une vision un peu plus claire des choses.
@@ -320,8 +320,8 @@ Sur la figure suivante on regarde ces histogrammes vus du dessus pour avoir une 
 \begin{figure}[H]
 \center
 \includegraphics[width=12cm]{exo2_hist2D_vue_dessus.png}
-\label{fig.exo2_histogramme2D_vue_dessus}
 \caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien - vue du dessus}
+\label{fig.exo2_histogramme2D_vue_dessus}
 \end{figure} 
 
 Comme modèle de probabilité théorique que l'on va utiliser pour modéliser l'information de couleur de la peau on va prendre un modèle \emph{gaussien multi-varié}.
@@ -347,7 +347,16 @@ On voit sur les figures \ref{fig.exo2_histogramme2D} et \ref{fig.exo2_histogramm
 
 \subsection{Partie II : Vers un classifieur bayésien}
 \subsubsection{Classe "non-peau"}
-
+Nous allons ici travailler au développement d'un classifieur bayésien. Pour cela, il convient de rappeler l'expression suivante:
+$$
+P(\omega_1|x) = \frac{p(x|\omega_1)*P(\omega_1)}{p(x)}
+$$
+Nous allons considérer que $P(\omega_1) = P(\omega_2) = \frac{1}{2}$ 
+\\
+L'expression précédente devient alors: $P(\omega_1|x)=\frac{1}{2}*\frac{p(x|\omega_1)}{p(x)}$
+\\
+Afin d'obtenir $P(x|\omega_2)$, on prend les bords des images de la banque d'échantillon. Pour cela, la fonction \emph{SelectPixelsNonCentre}. 
+\\
 
 \subsubsection{Classifieur optimal}
 
