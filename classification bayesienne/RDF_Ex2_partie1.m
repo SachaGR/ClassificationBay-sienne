@@ -184,7 +184,7 @@ title('Histogramme 2D des échantillons')
 subplot(1,2,2);
 surf(modelegaussien_np);
 shading interp;
-title('Modèle de la densité de probabilité jointe gaussienne de la classe peau');
+title('Modèle de la densité de probabilité jointe gaussienne de la classe non-peau');
 
 %% Application du modèle à des images test
 
@@ -215,7 +215,7 @@ imshow(I_test_np, [0 1]);
 title('Image RGB initiale')
 subplot(1,2,2);
 imshow(pxnoskin, [0 1]);
-title('Image p(x/skin)')
+title('Image p(x/noskin)')
 
 
 % segmentation de l'image

@@ -418,6 +418,17 @@ end
 
 On va pouvoir faire un apprentissage sur de la classe "non-peau" comme nous l'avons fait sur la classe "peau" précédemment.
 
+\begin{figure}[H]
+\center
+\includegraphics[width=15cm]{exo2_hist2D_np.png}
+\caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien pour la classe "non-peau" - vue en $3D$}
+\end{figure} 
+
+\begin{figure}[H]
+\center
+\includegraphics[width=12cm]{exo2_hist2D_vue_dessus_np.png}
+\caption{Histogramme 2D des composantes $C_r$ et $C_b$ sur 20 images comparé au modèle gaussien pour la classe "non-peau" - vue du dessus}
+\end{figure} 
 
 \subsubsection{Classifieur optimal}
 
@@ -712,6 +723,7 @@ for i = 1:length(cr)
 end
 %representation 2D de l'histogramme
 surf(hist2d);
+shading interp;
 \end{lstlisting}
 
 \subsection{Code de la fonction \emph{GaussLikelihood}}
